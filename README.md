@@ -2,7 +2,8 @@
 
 Personal academic website for Jihye "Erica" Bae.
 
-Plain static HTML + CSS. No build step, no dependencies, no JavaScript.
+Plain static HTML + CSS. No build step, no dependencies. The only script is
+the GoatCounter visitor counter (stats at https://khan0425.goatcounter.com/).
 
 ```
 index.html              Home
