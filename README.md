@@ -13,6 +13,7 @@ cv.html                 CV — embeds the live Google Doc "CV_Bae"
 assets/css/style.css    All styling
 assets/img/             Logo + project illustrations
 .nojekyll               Tells GitHub Pages to serve files as-is
+sitemap.xml, robots.txt For search engines — add new pages to sitemap.xml
 ```
 
 ## Local preview
