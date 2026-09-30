@@ -216,6 +216,13 @@ a.link:hover {
 .nav a[aria-current="page"]::after { transform: scaleX(1); }
 .nav a[aria-current="page"] { color: var(--ink); }
 
+/* phones: four nav items don't fit beside the logo — give them their own row */
+@media (max-width: 600px) {
+  .masthead__inner { flex-wrap: wrap; row-gap: .25rem; }
+  .nav { width: 100%; justify-content: space-between; gap: .75rem; }
+  .nav a { font-size: .74rem; letter-spacing: .1em; }
+}
+
 /* --- hero (home) -------------------------------------------------------- */
 .hero { padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2rem, 5vw, 3.25rem); }
 
@@ -431,9 +438,7 @@ a.link:hover {
   margin-bottom: .9rem;
 }
 .project__meta {
-  font-size: .85rem;
   color: var(--ink-mute);
-  letter-spacing: .01em;
   margin-top: 1rem;
   padding-top: .9rem;
   border-top: 1px dashed var(--rule);
@@ -483,7 +488,6 @@ a.link:hover {
 .biblio .doi {
   display: block;
   margin-top: .35rem;
-  font-size: .82rem;
   word-break: break-all;
 }
 .tag {
@@ -557,6 +561,17 @@ a.link:hover {
     background: var(--paper-card);
   }
   .cv-nav a:hover { padding-left: .9rem; }
+}
+
+.cv-embed { padding-bottom: var(--step); }
+.cv-embed iframe {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 36rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: .35rem;
+  background: #fff;
 }
 
 .cv-block { padding-block: clamp(2rem, 4.5vw, 3rem); border-top: 1px solid var(--rule-soft); }

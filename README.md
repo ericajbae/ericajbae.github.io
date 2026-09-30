@@ -7,8 +7,9 @@ Plain static HTML + CSS. No build step, no dependencies, no JavaScript.
 
 ```
 index.html              Home
-research.html           Ongoing / completed projects + publications
-cv.html                 Full CV (also downloadable as PDF)
+research.html           Ongoing / completed projects
+publications.html       Publication list
+cv.html                 CV — embeds the live Google Doc "CV_Bae"
 assets/css/style.css    All styling
 assets/img/             Logo + project illustrations
 assets/files/           CV PDF
