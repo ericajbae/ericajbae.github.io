@@ -34,32 +34,25 @@ straight off the filesystem too.
 | Repository name | Published at |
 | --- | --- |
 | `<username>.github.io` | `https://<username>.github.io/` |
-| anything else, e.g. `jihye-website` | `https://<username>.github.io/jihye-website/` |
+| anything else, e.g. `ericajbae-website` | `https://<username>.github.io/ericajbae-website/` |
 
 Only **one** `<username>.github.io` repo is allowed per account; project repos
 are unlimited. The repository must be **public** on a free plan.
 
 ### Steps
 
-1. **Create the repo on GitHub** — https://github.com/new
-   Name it `<username>.github.io`, visibility **Public**, and do *not* add a
-   README/.gitignore (this folder already has its own files).
+This repo pushes to `ericajbae/ericajbae-website`, so the site publishes at
+**https://ericajbae.github.io/ericajbae-website/**
 
-2. **Push this folder:**
+1. **Make the repo public** — Settings → General → Danger Zone → *Change
+   repository visibility* → Public. GitHub Pages only serves private repos on
+   paid plans, so this step is required on a free account.
+
+2. **Push:**
 
    ```sh
    cd /Users/kyoungho/workspace/personal/jihye-website
-   git init -b main
-   git add .
-   git commit -m "Migrate personal website from Google Sites to GitHub Pages"
-   git remote add origin https://github.com/<username>/<username>.github.io.git
    git push -u origin main
-   ```
-
-   Or with the GitHub CLI, which creates the repo and pushes in one go:
-
-   ```sh
-   gh repo create <username>.github.io --public --source=. --remote=origin --push
    ```
 
 3. **Turn on Pages** — repo → **Settings** → **Pages** →
@@ -104,24 +97,14 @@ Everything is hand-written HTML — open the file and edit the text.
 - **Change colours/fonts** → the `:root` block at the top of
   `assets/css/style.css` holds every token.
 
-### Adding the portrait photo
+### The portrait photo
 
-The original Google Sites portrait could not be downloaded (Google returns 403
-for direct image requests). To add it:
-
-1. Save the photo as `assets/img/portrait.jpg`.
-2. In `index.html`, replace the `<div class="portrait__fallback">…</div>` block
-   with:
-
-   ```html
-   <img src="assets/img/portrait.jpg" alt="Portrait of Jihye Erica Bae">
-   ```
-
-Until then a styled monogram placeholder is shown, so nothing looks broken.
+`assets/img/portrait.jpg` is a square crop of the original Google Sites photo.
+To swap it, overwrite that file with another square image — the frame uses
+`object-fit: cover`, so any square crop drops in cleanly. Its displayed size is
+`.portrait { max-width }` in the stylesheet.
 
 ### Before going live
 
-- `index.html` has `<link rel="canonical" href="https://example.github.io/">` —
-  replace with the real URL.
 - Consider leaving a short "This site has moved to …" note on the Google Sites
   page so old links still lead somewhere.

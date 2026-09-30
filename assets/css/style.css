@@ -1,7 +1,7 @@
 /* ==========================================================================
    Jihye "Erica" Bae — personal academic site
    Aesthetic: warm letterpress paper. Cream ground, ink type, marigold accent.
-   Fraunces (display) + Karla (text). No build step, no JS dependency.
+   Newsreader (display) + Karla (text). No build step, no JS dependency.
    ========================================================================== */
 
 /* --- tokens ------------------------------------------------------------- */
@@ -20,7 +20,7 @@
   --pine:         #235f56;
   --pine-lo:      #e2efeb;
 
-  --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --sans:  "Karla", "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
 
   --measure: 34rem;      /* comfortable reading width */
@@ -109,9 +109,9 @@ a { color: inherit; }
 h1, h2, h3, h4 {
   font-family: var(--serif);
   font-weight: 500;
-  font-variation-settings: "SOFT" 20, "WONK" 1;
-  line-height: 1.12;
-  letter-spacing: -.015em;
+  font-variation-settings: "opsz" 36;
+  line-height: 1.16;
+  letter-spacing: -.008em;
   margin: 0;
   text-wrap: balance;
 }
@@ -227,16 +227,17 @@ a.link:hover {
 }
 
 .hero__name {
-  font-size: clamp(3rem, 9.5vw, 6.6rem);
-  font-weight: 400;
-  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 120;
-  line-height: .95;
-  letter-spacing: -.035em;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.35rem, 5.4vw, 4rem);
+  font-weight: 500;
+  font-variation-settings: "opsz" 60;
+  line-height: 1.06;
+  letter-spacing: -.02em;
+  margin-bottom: 1.35rem;
 }
 .hero__name em {
-  font-style: italic;
-  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-style: normal;
+  font-weight: 500;
+  font-variation-settings: "opsz" 60;
   color: var(--marigold);
 }
 
@@ -250,21 +251,21 @@ a.link:hover {
 .hero__role strong { font-weight: 700; color: var(--ink); }
 
 /* portrait: soft arch frame with an offset marigold plate behind it */
-.portrait { position: relative; justify-self: center; width: 100%; max-width: 23rem; }
+.portrait { position: relative; justify-self: center; width: 100%; max-width: 16.5rem; }
 .portrait::before {
   content: "";
   position: absolute;
-  inset: 1.1rem -1.1rem -1.1rem 1.1rem;
+  inset: .85rem -.85rem -.85rem .85rem;
   border: 1px solid var(--marigold);
-  border-radius: 12rem 12rem .6rem .6rem;
+  border-radius: 9rem 9rem .5rem .5rem;
   z-index: 0;
 }
 .portrait__img {
   position: relative;
   z-index: 1;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   width: 100%;
-  border-radius: 12rem 12rem .6rem .6rem;
+  border-radius: 9rem 9rem .5rem .5rem;
   overflow: hidden;
   background: var(--paper-deep);
   box-shadow: 0 18px 44px -26px rgba(35, 31, 26, .5);
@@ -273,7 +274,7 @@ a.link:hover {
 
 @media (max-width: 820px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .portrait { max-width: 17rem; justify-self: start; margin-top: 1rem; }
+  .portrait { max-width: 14rem; justify-self: start; margin-top: .5rem; }
 }
 
 /* placeholder shown when no portrait file is present yet */
@@ -290,7 +291,7 @@ a.link:hover {
 .portrait__fallback span {
   font-family: var(--serif);
   font-size: 3.4rem;
-  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-variation-settings: "opsz" 48;
   color: var(--marigold);
   display: block;
   line-height: 1;
@@ -340,7 +341,7 @@ a.link:hover {
   counter-increment: interest;
   font-family: var(--serif);
   font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-  font-variation-settings: "SOFT" 30, "WONK" 1;
+  font-variation-settings: "opsz" 28;
   padding-block: .85rem;
   border-bottom: 1px solid var(--rule-soft);
   display: flex;
@@ -371,7 +372,7 @@ a.link:hover {
 .contact__mail {
   font-family: var(--serif);
   font-size: clamp(1.1rem, 2.6vw, 1.55rem);
-  font-variation-settings: "SOFT" 30, "WONK" 1;
+  font-variation-settings: "opsz" 28;
   word-break: break-word;
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -584,7 +585,7 @@ a.link:hover {
 }
 .entry__what h3 {
   font-size: 1.16rem;
-  font-variation-settings: "SOFT" 20, "WONK" 0;
+  font-variation-settings: "opsz" 18;
   margin-bottom: .25rem;
 }
 .entry__what .where { color: var(--ink-soft); font-size: .95rem; }
@@ -633,7 +634,7 @@ a.link:hover {
 .foot__verse {
   font-family: var(--serif);
   font-style: italic;
-  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-variation-settings: "opsz" 24;
   font-size: 1.02rem;
   color: var(--ink-soft);
 }
