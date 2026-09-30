@@ -12,7 +12,6 @@ publications.html       Publication list
 cv.html                 CV — embeds the live Google Doc "CV_Bae"
 assets/css/style.css    All styling
 assets/img/             Logo + project illustrations
-assets/files/           CV PDF
 .nojekyll               Tells GitHub Pages to serve files as-is
 ```
 
@@ -67,10 +66,10 @@ Then tick **Enforce HTTPS** once the certificate is issued (can take an hour).
 Everything is hand-written HTML — open the file and edit the text.
 
 - **Add a publication** → copy an existing `<li>` inside `<ol class="biblio">`
-  in `research.html` and `cv.html`.
-- **Add a CV entry** → copy a `<div class="entry">` block; the left column is
-  `entry__when` (the date), the right is `entry__what`.
-- **Replace the CV PDF** → overwrite `assets/files/CV_Jihye_Erica_Bae.pdf`.
+  in `publications.html`.
+- **Update the CV** → just edit the Google Doc "CV_Bae". The CV page embeds it
+  and the "CV (PDF)" / "Download PDF" links export it fresh, so nothing here
+  needs to change. Keep the doc shared as "anyone with the link can view".
 - **Change colours/fonts** → the `:root` block at the top of
   `assets/css/style.css` holds every token.
 
