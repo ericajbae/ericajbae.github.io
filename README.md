@@ -55,7 +55,7 @@ Everything is hand-written HTML — open the file and edit the text.
 - **Add a publication** → copy an existing `<li>` inside `<ol class="biblio">`
   in `publications.html`.
 - **Update the CV** → just edit the Google Doc "CV_Bae". The CV page embeds it
-  and the "CV (PDF)" / "Download PDF" links export it fresh, so nothing here
+  and its "Download PDF" button exports it fresh, so nothing here
   needs to change. Keep the doc shared as "anyone with the link can view".
 - **Change colours/fonts** → the `:root` block at the top of
   `assets/css/style.css` holds every token.
