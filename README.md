@@ -46,18 +46,6 @@ Pages redeploys automatically on every push to `main`, usually within 1–2
 minutes. Check the **Actions** tab if a change hasn't appeared — a red run
 there means the deploy failed.
 
-### Optional: a custom domain
-
-Buy a domain, then Settings → Pages → *Custom domain* → enter e.g.
-`jihyebae.com` → Save, and add these records at your registrar:
-
-| Type | Name | Value |
-| --- | --- | --- |
-| `A` | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
-| `CNAME` | `www` | `<username>.github.io` |
-
-Then tick **Enforce HTTPS** once the certificate is issued (can take an hour).
-
 ---
 
 ## Editing the content
@@ -74,12 +62,7 @@ Everything is hand-written HTML — open the file and edit the text.
 
 ### The portrait photo
 
-`assets/img/portrait.jpg` is a square crop of the original Google Sites photo.
+`assets/img/portrait.jpg` is a square photo.
 To swap it, overwrite that file with another square image — the frame uses
 `object-fit: cover`, so any square crop drops in cleanly. Its displayed size is
 `.portrait { max-width }` in the stylesheet.
-
-### Before going live
-
-- Consider leaving a short "This site has moved to …" note on the Google Sites
-  page so old links still lead somewhere.
