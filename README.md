@@ -1,7 +1,6 @@
 # ericajbae.github.io
 
-Personal academic website for Jihye "Erica" Bae — migrated from Google Sites
-(`sites.google.com/view/jihyeericabae`) to GitHub Pages.
+Personal academic website for Jihye "Erica" Bae.
 
 Plain static HTML + CSS. No build step, no dependencies, no JavaScript.
 
