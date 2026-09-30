@@ -27,7 +27,7 @@
   --page:    72rem;      /* outer page width          */
   --gutter:  clamp(1.25rem, 5vw, 4.5rem);
 
-  --step:    clamp(4rem, 9vw, 7.5rem);   /* vertical section rhythm */
+  --step:    clamp(3rem, 6vw, 5rem);   /* vertical section rhythm */
 }
 
 /* --- reset -------------------------------------------------------------- */
@@ -48,6 +48,9 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -174,13 +177,29 @@ a.link:hover {
   padding-block: .6rem;
 }
 
-.sigmark { display: block; flex-shrink: 0; }
+.sigmark {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--ink);
+}
 .sigmark img {
-  height: 2.6rem;
+  height: 3.2rem;
   width: auto;
   transition: opacity .22s;
 }
+.sigmark__name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-variation-settings: "opsz" 24;
+  letter-spacing: -.005em;
+  transition: color .22s;
+}
 .sigmark:hover img { opacity: .62; }
+.sigmark:hover .sigmark__name { color: var(--marigold); }
 
 .nav { display: flex; gap: clamp(1.1rem, 3vw, 2.4rem); }
 .nav a {
@@ -249,6 +268,7 @@ a.link:hover {
   max-width: 30rem;
   margin-bottom: 2rem;
 }
+.hero__role--lead { margin-bottom: .6rem; }
 .hero__role strong { font-weight: 700; color: var(--ink); }
 
 /* portrait: soft arch frame with an offset marigold plate behind it */
@@ -279,6 +299,8 @@ a.link:hover {
 }
 
 /* --- generic section ---------------------------------------------------- */
+main { flex: 1; }
+
 .section { padding-block: var(--step); }
 .section + .section { border-top: 1px solid var(--rule-soft); }
 
@@ -422,6 +444,15 @@ a.link:hover {
 }
 .project__art img { max-height: 11rem; width: auto; object-fit: contain; mix-blend-mode: multiply; }
 
+/* completed projects: text-only entries, same full-width layout as ongoing */
+.study {
+  padding-block: clamp(1.75rem, 4vw, 2.5rem);
+  border-bottom: 1px solid var(--rule-soft);
+  max-width: 48rem;
+}
+.study:first-of-type { border-top: 1px solid var(--rule-soft); }
+.study .project__title { font-size: clamp(1.3rem, 2.6vw, 1.75rem); }
+
 @media (max-width: 760px) {
   .project,
   .project:nth-child(even) { grid-template-columns: 1fr; }
@@ -454,7 +485,8 @@ a.link:hover {
 .biblio cite { font-style: italic; }
 .biblio .self { font-weight: 700; }
 .biblio .doi {
-  display: block;
+  display: inline-block;
+  max-width: 100%;
   margin-top: .35rem;
   word-break: break-all;
 }
@@ -502,6 +534,21 @@ a.link:hover {
 .btn svg { width: 1rem; height: 1rem; }
 
 .cv-embed { padding-bottom: var(--step); }
+.cv-mobile { display: none; }
+@media (max-width: 700px) {
+  .cv-head .btn { display: none; }
+  .cv-embed { display: none; }
+  .cv-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: var(--step);
+  }
+  .cv-mobile p { margin: 0; color: var(--ink-soft); }
+}
+.btn--ghost { background: transparent; color: var(--ink); }
+
 .cv-embed iframe {
   display: block;
   width: 100%;
