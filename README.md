@@ -1,4 +1,4 @@
-# jihye-website
+# ericajbae.github.io
 
 Personal academic website for Jihye "Erica" Bae — migrated from Google Sites
 (`sites.google.com/view/jihyeericabae`) to GitHub Pages.
@@ -27,49 +27,25 @@ straight off the filesystem too.
 
 ---
 
-## Publishing to GitHub Pages
+## Publishing
 
-### Pick the repository name first — it decides the URL
+The site is live at **https://ericajbae.github.io/**, served by GitHub Pages
+from the `main` branch (root folder) of `ericajbae/ericajbae.github.io`.
+Because the repository is named `<username>.github.io`, it publishes at the
+root of the domain. It must stay **public** for Pages to work on a free plan.
 
-| Repository name | Published at |
-| --- | --- |
-| `<username>.github.io` | `https://<username>.github.io/` |
-| anything else, e.g. `ericajbae-website` | `https://<username>.github.io/ericajbae-website/` |
+### Updating
 
-Only **one** `<username>.github.io` repo is allowed per account; project repos
-are unlimited. The repository must be **public** on a free plan.
-
-### Steps
-
-This repo pushes to `ericajbae/ericajbae-website`, so the site publishes at
-**https://ericajbae.github.io/ericajbae-website/**
-
-1. **Make the repo public** — Settings → General → Danger Zone → *Change
-   repository visibility* → Public. GitHub Pages only serves private repos on
-   paid plans, so this step is required on a free account.
-
-2. **Push:**
-
-   ```sh
-   cd /Users/kyoungho/workspace/personal/jihye-website
-   git push -u origin main
-   ```
-
-3. **Turn on Pages** — repo → **Settings** → **Pages** →
-   *Build and deployment* → Source: **Deploy from a branch**,
-   Branch: **main**, Folder: **/ (root)** → **Save**.
-
-4. Wait 1–2 minutes (first publish can take up to ~10). The live URL appears at
-   the top of that same Settings → Pages screen. Check the **Actions** tab if
-   it hasn't appeared — a red run there means the deploy failed.
-
-### Updating later
+Edit a file on github.com and commit, or edit locally and push:
 
 ```sh
+git pull
 git add -A && git commit -m "Update publications" && git push
 ```
 
-Pages redeploys automatically on every push to `main`.
+Pages redeploys automatically on every push to `main`, usually within 1–2
+minutes. Check the **Actions** tab if a change hasn't appeared — a red run
+there means the deploy failed.
 
 ### Optional: a custom domain
 
